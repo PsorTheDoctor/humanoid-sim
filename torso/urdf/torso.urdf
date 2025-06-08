@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="torso">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.718288450977476 0.966629059042006 1.40654797964364"
+        rpy="0 0 0" />
+      <mass
+        value="6.00370406912332" />
+      <inertia
+        ixx="0.0817425851005252"
+        ixy="-1.58855625042271E-17"
+        ixz="-7.34449744025935E-19"
+        iyy="0.0196648211381326"
+        iyz="-1.15994979614662E-19"
+        izz="0.0936763329102281" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="outer_shoulder">
+    <inertial>
+      <origin
+        xyz="2.22044604925031E-16 -0.0345343125421843 2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.142444172808288" />
+      <inertia
+        ixx="0.000144297517121002"
+        ixy="-5.83302055939206E-19"
+        ixz="1.82959116606929E-19"
+        iyy="0.000265816972965645"
+        iyz="1.14863005504482E-19"
+        izz="0.000342100331679131" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/outer_shoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/outer_shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="outer_shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0.82229 -1.4065 1.1099"
+      rpy="0 -0.29835 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="outer_shoulder" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="inner_shoulder">
+    <inertial>
+      <origin
+        xyz="0.00494049075931313 5.32907051820075E-15 -0.0224791847510397"
+        rpy="0 0 0" />
+      <mass
+        value="0.447696414739891" />
+      <inertia
+        ixx="0.000520297172086548"
+        ixy="-8.13151629364128E-20"
+        ixz="-5.48355999973819E-06"
+        iyy="0.000505507821238447"
+        iyz="1.01643953670516E-19"
+        izz="0.000364836443263981" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/inner_shoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/inner_shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="inner_shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.064 0"
+      rpy="0 -0.25719 -1.5708" />
+    <parent
+      link="outer_shoulder" />
+    <child
+      link="inner_shoulder" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="arm">
+    <inertial>
+      <origin
+        xyz="2.22044604925031E-16 5.55111512312578E-16 0.0518244798169354"
+        rpy="0 0 0" />
+      <mass
+        value="0.409460103684972" />
+      <inertia
+        ixx="0.00043771678495871"
+        ixy="2.03287907341032E-20"
+        ixz="-3.72694496791892E-20"
+        iyy="0.000635454002376501"
+        iyz="-2.46655994240452E-18"
+        izz="0.000407886367395634" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.065976"
+      rpy="-3.1416 0 -0.22557" />
+    <parent
+      link="inner_shoulder" />
+    <child
+      link="arm" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="elbow">
+    <inertial>
+      <origin
+        xyz="-0.00124066712054338 -2.22044604925031E-16 0.0305258147158514"
+        rpy="0 0 0" />
+      <mass
+        value="0.174700172808288" />
+      <inertia
+        ixx="0.000165715840874616"
+        ixy="5.75982404132924E-20"
+        ixz="3.19521936133811E-07"
+        iyy="0.000119401019571205"
+        iyz="9.68793933422106E-20"
+        izz="0.000104238703515156" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/elbow.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.11002"
+      rpy="0 -0.27103 -1.5708" />
+    <parent
+      link="arm" />
+    <child
+      link="elbow" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="forearm">
+    <inertial>
+      <origin
+        xyz="-0.00377147733492511 0.0461382624798303 -5.66810443025645E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.337994933374247" />
+      <inertia
+        ixx="0.000497720839329984"
+        ixy="5.83749050987914E-05"
+        ixz="-3.96969848638439E-11"
+        iyy="0.000165354478238505"
+        iyz="-1.93145058628686E-12"
+        izz="0.00052370884651294" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/forearm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/forearm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_joint"
+    type="revolute">
+    <origin
+      xyz="-0.038118 0 0.032"
+      rpy="0 -0.40915 1.5708" />
+    <parent
+      link="elbow" />
+    <child
+      link="forearm" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wrist">
+    <inertial>
+      <origin
+        xyz="0.00227165123617445 2.22044604925031E-16 0.0141245009064419"
+        rpy="0 0 0" />
+      <mass
+        value="0.0777859878929852" />
+      <inertia
+        ixx="5.37973694478375E-05"
+        ixy="-4.02340649945793E-20"
+        ixz="-8.61421306101721E-08"
+        iyy="4.02391952266775E-05"
+        iyz="-6.18334051495639E-20"
+        izz="2.16897600970846E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/wrist.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://torso/meshes/wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.11388 0"
+      rpy="-1.16 0 0" />
+    <parent
+      link="forearm" />
+    <child
+      link="wrist" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
